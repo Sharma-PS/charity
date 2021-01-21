@@ -4,18 +4,20 @@ import './App.css';
 import Navbar from './components/NavBar/Navbar';
 import Home from './components/Home/Home';
 import volunteerProfile from './components/voluteerProfile/volunteerProfile';
+import Login from './components/Login/Login';
 
 class App extends Component {
   render(){
     return (
       <BrowserRouter>
-        <div>
-          <Navbar/>
           <Switch>
-            <Route exact path="/" component={Home}/>
-            <Route path="/volunteerProfile/:vId" component={volunteerProfile}/>
+            <Route path="/Login" component={Login}/>
+            <div>
+            <Navbar/>
+              <Route exact path="/" component={Home}/>
+              <Route path="/volunteerProfile/:vId" component={volunteerProfile}/>            
+            </div>
           </Switch>
-        </div>
       </BrowserRouter>
     );
   }

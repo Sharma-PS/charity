@@ -7,13 +7,9 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import { Divider, Typography } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import { Col } from 'reactstrap';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    width: '30%',
-    minWidth:360,
-    margin:"25px"
-  },
   headingTxt:{
     fontWeight:500,
     color:"#d0d4da"
@@ -38,12 +34,12 @@ export default function MyEvents({events}) {
     )
   })
   return (
-    <div>
-      <List className={[classes.root,"eventGroup"]}>
+    <Col md="4" sm="11" lg="4" className="eventGroup">
+      <List >
       <Typography gutterBottom variant="h4" component="h2" align="center" className={classes.headingTxt}> My Events </Typography>
       <Divider style={{backgroundColor:" #8b949e"}}/>
         {Events}
       </List>
-    </div>
+    </Col>
   );
 }
